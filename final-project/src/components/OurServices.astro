@@ -1,6 +1,6 @@
 <section>
     <div class="title">
-        <h1>Our Services</h1>
+        <h1 class="service">Our Services</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, laboriosam.</p>
     </div>
     
@@ -39,9 +39,11 @@
 </section>
 
 <style>
-    section{
+    *{
         padding: 0;
         margin: 0;
+    }
+    section{
         background-color: #F7F7F7;
         text-align: center;
     }
@@ -49,10 +51,13 @@
         font-size: 48px;
     }
     img{
-        width:380px;
+        width:100%;
     }
-    .title{
-        padding: 5rem;
+    .title .service{
+        padding: 5rem 0 1.5rem 0;
+    }
+    .title p{
+        padding-bottom: 5rem;
     }
     .container{
         display: flex;
@@ -71,13 +76,17 @@
         border-radius: 5px;
     }
     h3{
-        margin: 0;
         padding-top: 2rem;
-        padding-bottom: 0;
+        padding-bottom: 1rem;
         font-size: 24px;
     }
     p{
-        /* padding-bottom: 1.5rem; */
         padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    @media(max-width:460px){
+        h1{
+            font-size: 32px;
+        }
     }
 </style>
