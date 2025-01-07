@@ -49,10 +49,7 @@
       <button type="submit" class="submit-button">Submit</button>
     </form>
   </div>
-  <div class="image-container">
-    <!-- <img src="/contactUs/contactUs-image.png" alt="" /> -->
-  </div>
-  <!-- </div> -->
+  <img src="/contactUs/contactUs-image.png" alt="" class="image-container" />
 </section>
 
 <style>
@@ -61,10 +58,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-
-  .outline-container {
-    margin: 7rem 4rem;
   }
 
   .contact-section {
@@ -179,9 +172,9 @@
   }
 
   .image-container {
-    background-image: url("/contactUs/contactUs-image.png");
     background-size: cover;
     background-position: center;
+    padding: 4rem;
   }
 
   @media (max-width: 768px) {
@@ -197,9 +190,12 @@
       grid-template-columns: 1fr;
     }
 
+    .submit-button {
+      width: 100%;
+    }
+
     .image-container {
-      min-height: 300px;
-      order: -1;
+      display: none;
     }
   }
 </style>
