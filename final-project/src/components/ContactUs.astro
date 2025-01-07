@@ -1,4 +1,5 @@
 <section class="contact-section">
+  <!-- <div class="outline-container"> -->
   <div class="form-container">
     <div class="form-header">
       <p class="subtitle">Contact us</p>
@@ -7,19 +8,16 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
     </div>
-
     <form>
       <div class="form-grid">
         <div class="form-field">
           <label class="form-label">Full name</label>
           <input type="text" class="form-input" required />
         </div>
-
         <div class="form-field">
           <label class="form-label">Phone number</label>
           <input type="tel" class="form-input" required />
         </div>
-
         <div class="form-field">
           <label class="form-label">Select service</label>
           <select class="form-select" required>
@@ -29,7 +27,6 @@
             <option value="window">Window Cleaning</option>
           </select>
         </div>
-
         <div class="form-field">
           <label class="form-label">Select time</label>
           <select class="form-select" required>
@@ -40,22 +37,22 @@
           </select>
         </div>
       </div>
-
       <div class="form-field full-width">
         <label class="form-label">Message</label>
         <textarea class="form-textarea" placeholder="Type your message..."
         ></textarea>
       </div>
-
       <div class="form-checkbox">
         <input type="checkbox" id="terms" required />
         <label for="terms">I accept the <a href="#">Terms</a></label>
       </div>
-
       <button type="submit" class="submit-button">Submit</button>
     </form>
   </div>
-  <div class="image-container"></div>
+  <div class="image-container">
+    <!-- <img src="/contactUs/contactUs-image.png" alt="" /> -->
+  </div>
+  <!-- </div> -->
 </section>
 
 <style>
@@ -64,6 +61,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .outline-container {
+    margin: 7rem 4rem;
   }
 
   .contact-section {
@@ -178,7 +179,7 @@
   }
 
   .image-container {
-    background-image: url("path-to-your-image.jpg");
+    background-image: url("/contactUs/contactUs-image.png");
     background-size: cover;
     background-position: center;
   }
