@@ -2,7 +2,9 @@
     <div class="container">
         <h1>Subscribe to our newsletter</h1>
         <p>
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt magni esse quod vitae quasi dolorem voluptatibus laboriosam ea, consequuntur similique.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+            magni esse quod vitae quasi dolorem voluptatibus laboriosam ea,
+            consequuntur similique.
         </p>
         <div class="sign-up">
             <div class="text">
@@ -10,22 +12,24 @@
                 <button>Sign Up</button>
             </div>
             <p id="under-text">
-                By clicking Sign Up you're confirming that you agree with our Terms and Conditions.
+                By clicking Sign Up you're confirming that you agree with our
+                Terms and Conditions.
             </p>
         </div>
     </div>
 </section>
+<div id="message"></div>
 
 <style>
     * {
         padding: 0;
         margin: 0;
     }
-    section{
+    section {
         display: flex;
         justify-content: center;
     }
-    .container{
+    .container {
         width: 70%;
         display: flex;
         flex-direction: column;
@@ -40,25 +44,28 @@
         align-items: center;
         margin-top: 1.5rem;
     }
-    p{
+    p {
         padding: 1rem;
         text-align: center;
     }
-    #under-text{
+    #under-text {
         font-size: 12px;
     }
-    input, button{
+    input,
+    button {
         border-radius: 5px;
         border: 1px solid black;
     }
-    input{
+    input {
         width: 25rem;
         height: 2rem;
+        caret-color: rgb(255, 0, 234);
+        font: 16px;
     }
-    input::placeholder{
+    input::placeholder {
         padding-left: 10px;
     }
-    button{
+    button {
         width: 5rem;
         height: 2rem;
         font-size: 12px;
@@ -66,21 +73,58 @@
         color: white;
         margin-left: 0.3rem;
     }
-    h1{
+    button:hover {
+        background-color: white;
+        color: black;
+        box-shadow: 5px 5px 3px grey;
+    }
+    h1 {
         font-size: 48px;
         text-align: center;
     }
-
-    @media(max-width:700px){
-        h1{
+    #message {
+        position: relative;
+        top: 0;
+        left: 0;
+        /* display: none; */
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    .success {
+        color: green; /* message is right */
+    }
+    .error {
+        color: red; /* message is wrong */
+    }
+    @media (max-width: 700px) {
+        h1 {
             font-size: 32px;
         }
-        input{
+        input {
             width: 10rem;
         }
-        button{
+        button {
             width: 3rem;
             font-size: 9px;
         }
     }
 </style>
+
+<!-- <script>
+    const button = document.querySelector("button");
+    const message = document.getElementById("message");
+    const input = document.querySelector('input');
+
+    button.addEventListener("click", () => {
+        alert('Please enter your email');
+        // if(input.value.trim() === ""){
+        //     message.textContent = 'Please enter your email';
+        //     message.className = 'error'; // 設定紅色訊息
+        // }
+        // else{
+        //     message.textContent = 'You are already sign up.';
+        //     message.className = 'success'; 
+
+        // }
+    });
+</script> -->
