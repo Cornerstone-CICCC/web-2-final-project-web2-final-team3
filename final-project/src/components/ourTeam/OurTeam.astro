@@ -1,0 +1,62 @@
+---
+import TeamMemberCard from "./TeamMemberCard.astro";
+---
+
+<section class="team-section">
+  <h1>Our team</h1>
+  <p class="team-description">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </p>
+
+  <div class="team-grid">
+    <TeamMemberCard
+      name="Leslie Alexander"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+      image="/leslie.png"
+    />
+
+    <TeamMemberCard
+      name="Ralph Edwards"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+      image="/ralph.png"
+    />
+
+    <TeamMemberCard
+      name="Annette Black"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+      image="/annette.png"
+    />
+
+    <TeamMemberCard
+      name="Savannah Nguyen"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+      image="/savannah.png"
+    />
+  </div>
+</section>
+
+<style>
+  .team-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .team-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .team-description {
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+</style>
