@@ -1,0 +1,105 @@
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-box">
+      <div class="about-text">
+        <p>About Us</p>
+        <h4>Let us takecare of all your cleaning service needs.</h4>
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
+          ornare, eros dolor interdum nulla, ut commodo diam libero vitae
+          erat.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Suspendisse varius enim in eros elementum tristique. Duis cursus, mi
+          quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
+          vitae erat.Lo
+        </span>
+        <button>Request a quote</button>
+      </div>
+      <img
+        src="https://s3-alpha-sig.figma.com/img/1c9d/45c1/853746104181377137084220004c1eb0?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=D680H9xWBRMmg~U57d78T07Qam36-LeLArDIuo4lH5cMZ~cho459vu6ke7vByGAjhlKYp2pZyvhREzakBEoo5lAZTaV9~BgipUDWTm35M7tVJ1v66r1hUduX23njx-YEnsBBGe9AsRis9DQnDkOJL6rPUOAZ1c2utm-uislPPqN9F7r2GTRjHjG5RecdhGJ5GUfaLi4zO~XR0STHsarWf1Z60GSiBJtTo6RKWALoJA508pPIRG1vgQVDyAMzJz5ls2DSyQAUlniyTv07V89Lhdkcl9qNqnTYAfEhC1a5o3VlibW3tS4OYwHHly4RQ57DOq6NfVfu83hID9d6qHQsAw__"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-container {
+    margin: 30px 20px;
+    height: auto;
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about-box h4 {
+    font-size: 32px;
+    margin: 25px 0;
+  }
+
+  .about-box span {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .about-box button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    width: 156px;
+    height: 40px;
+    border: 1px black solid;
+    align-self: self-start;
+    justify-self: end;
+    margin-right: 45px;
+    margin: 45px 0 0;
+  }
+
+  .about-box img {
+    height: 360px;
+    object-fit: cover;
+    transform: scaleX(-1);
+    margin: 45px 0;
+    border-radius: 5px;
+  }
+
+  @media (min-width: 720px) {
+    /*DESKTOP VERSION STYLE*/
+    .about-box {
+      display: grid;
+      gap: 80px;
+    }
+
+    .about-box img {
+      grid-column: 2;
+      justify-self: center;
+      width: 42vw;
+      height: 42vw;
+    }
+
+    .about-box p {
+      margin: 0;
+    }
+
+    .about-box h4 {
+      font-size: 48px;
+    }
+
+    .about-text {
+      width: 42vw;
+      align-self: center;
+    }
+
+    .about-box button {
+      justify-self: left;
+    }
+  }
+</style>
