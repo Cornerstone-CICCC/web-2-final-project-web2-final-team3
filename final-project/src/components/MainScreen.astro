@@ -14,7 +14,8 @@
       <a href="#learn" class="button secondary-button">Learn More</a>
     </div>
   </div>
-  <div class="hero-image"></div>
+  <!-- <div class="hero-image"></div> -->
+  <img src="/mainScreen/mainScreen-image.png" alt="" />
 </section>
 
 <section class="contact-form">
@@ -65,9 +66,8 @@
   }
 
   .hero-image {
-    background-image: url("path-to-your-image.jpg");
-    background-size: cover;
-    background-position: center;
+    width: 45rem;
+    height: 56.25rem;
   }
 
   .hero-title {
@@ -126,10 +126,9 @@
   }
 
   .form-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    align-items: start;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
   }
 
   .form-field {
