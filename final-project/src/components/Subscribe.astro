@@ -1,30 +1,86 @@
 <section>
-    <h1>Subscribe to our newsletter</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos recusandae velit, debitis tempora nemo corporis!</p>
-    <div class="sign-up">
-        <div class="text">
-            <input type="text" placeholder="Enter your email">
-            <button>Sign Up</button>
+    <div class="container">
+        <h1>Subscribe to our newsletter</h1>
+        <p>
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt magni esse quod vitae quasi dolorem voluptatibus laboriosam ea, consequuntur similique.
+        </p>
+        <div class="sign-up">
+            <div class="text">
+                <input type="text" placeholder="Enter your email" />
+                <button>Sign Up</button>
+            </div>
+            <p id="under-text">
+                By clicking Sign Up you're confirming that you agree with our Terms and Conditions.
+            </p>
         </div>
-        <p>By clicking Sign Up you're confirming that you agree with our Terms and Conditions.</p>
     </div>
 </section>
 
 <style>
-    *{
+    * {
         padding: 0;
         margin: 0;
     }
     section{
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
     }
-    .sign-up{
+    .container{
+        width: 70%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 5rem;
+    }
+    .sign-up {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+    p{
+        padding: 1rem;
+        text-align: center;
+    }
+    #under-text{
+        font-size: 12px;
+    }
+    input, button{
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+    input{
+        width: 25rem;
+        height: 2rem;
+    }
+    input::placeholder{
+        padding-left: 10px;
+    }
+    button{
+        width: 5rem;
+        height: 2rem;
+        font-size: 12px;
+        background-color: black;
+        color: white;
+        margin-left: 0.3rem;
+    }
+    h1{
+        font-size: 48px;
+        text-align: center;
+    }
+
+    @media(max-width:700px){
+        h1{
+            font-size: 32px;
+        }
+        input{
+            width: 10rem;
+        }
+        button{
+            width: 3rem;
+            font-size: 9px;
+        }
     }
 </style>
