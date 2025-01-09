@@ -1,0 +1,174 @@
+---
+import TeamMemberCard from "./TeamMemberCard.astro";
+
+const initialVisibleCount = 3;
+
+const teamMembers = [
+  {
+    name: "Leslie Alexander",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    image: "/leslie.png",
+  },
+  {
+    name: "Ralph Edwards",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    image: "/ralph.png",
+  },
+  {
+    name: "Annette Black",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    image: "/annette.png",
+  },
+  {
+    name: "Savannah Nguyen",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    image: "/savannah.png",
+  },
+];
+---
+
+<section class="team-section">
+  <h1>Our team</h1>
+  <p class="team-description">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </p>
+
+  <div class="team-grid" id="teamGrid">
+    {
+      teamMembers
+        .slice(0, initialVisibleCount)
+        .map((member) => (
+          <TeamMemberCard
+            name={member.name}
+            description={member.description}
+            image={member.image}
+          />
+        ))
+    }
+  </div>
+
+  {
+    teamMembers.length > initialVisibleCount && (
+      <button class="view-all-button" id="viewAllButton">
+        View all
+      </button>
+    )
+  }
+</section>
+
+<style>
+  .team-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .team-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .team-description {
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .view-all-button {
+      width: 100%;
+      margin-top: 40px;
+      padding: 12px 32px;
+      background-color: transparent;
+      border: 1px solid #000;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .view-all-button:hover {
+      background-color: #000;
+      color: white;
+    }
+  }
+</style>
+
+<script>
+  const teamMembers = [
+    {
+      name: "Leslie Alexander",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+      image: "/leslie.png",
+    },
+    {
+      name: "Ralph Edwards",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+      image: "/ralph.png",
+    },
+    {
+      name: "Annette Black",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+      image: "/annette.png",
+    },
+    {
+      name: "Savannah Nguyen",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+      image: "/savannah.png",
+    },
+  ];
+
+  const viewAllButton = document.getElementById("viewAllButton");
+  const teamGrid = document.getElementById("teamGrid");
+
+  if (viewAllButton && teamGrid) {
+    viewAllButton.addEventListener("click", () => {
+      const remainingMembers = teamMembers.slice(3);
+
+      remainingMembers.forEach((member) => {
+        const memberCard = document.createElement("div");
+        memberCard.className = "hidden";
+        memberCard.innerHTML = `
+          <div class="team-member-card">
+            <img src="/ourTeam${member.image}" alt="${member.name}" class="member-image">
+            <h2>${member.name}</h2>
+            <p>${member.description}</p>
+            <div class="social-links">
+              <a href="#" aria-label="LinkedIn"><svg>...</svg></a>
+              <a href="#" aria-label="Twitter"><svg>...</svg></a>
+              <a href="#" aria-label="Dribbble"><svg>...</svg></a>
+            </div>
+          </div>
+        `;
+
+        teamGrid.appendChild(memberCard);
+
+        // Trigger reflow to enable animation
+        memberCard.offsetHeight;
+        memberCard.classList.remove("hidden");
+      });
+
+      viewAllButton.style.display = "none";
+    });
+  }
+</script>
