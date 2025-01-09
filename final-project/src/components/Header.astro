@@ -1,0 +1,205 @@
+<section class="over-header">
+  <div class="header-info">
+    <span class="forEmergency">For emergency cases: 567 123 45 67</span>
+    <span class="location">Location: 121 Wallstreet Street, NY , USA </span>
+    <span class="hours">Open hours: 9.00-24.00 Mon-Sat</span>
+    <span class="header-email">Email:info@ddsgnr.com</span>
+  </div>
+  <div class="header-medias">
+    <img src="/Header Images/Facebook.svg" alt="" />
+    <img src="/Header Images/Instagram.svg" alt="" />
+    <img src="/Header Images/Twitter.svg" alt="" />
+    <img src="/Header Images/LinkedIn.svg" alt="" />
+  </div>
+</section>
+
+<nav>
+  <div class="mobile-logo">
+    <img src="/Header Images/Frame 1.svg" alt="" />
+    <span>Ddsgnr</span>
+  </div>
+  <input type="checkbox" id="check" />
+  <label for="check" class="checkbtn">
+    <img src="/Header Images/Vector.svg" alt="" />
+  </label>
+  <div class="nav-mobile">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Teams</a>
+    <a href="#">Contact</a>
+    <button class="quote-request">Request a quote</button>
+  </div>
+  <div class="nav-desktop">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Teams</a>
+    <a href="#">Contact</a>
+    <button class="quote-request">Request a quote</button>
+  </div>
+</nav>
+
+<style>
+  .mobile-logo span {
+    font-size: 25px;
+  }
+
+  .mobile-logo img {
+    margin-right: 15px;
+  }
+
+  .mobile-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .quote-request {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    width: 136px;
+    height: 38px;
+    font-size: 14px;
+    border: 1px black solid;
+    align-self: self-start;
+    justify-self: end;
+    margin: 20px 0px;
+  }
+
+  #check {
+    display: none;
+  }
+
+  nav {
+    border-bottom: 1px black solid;
+    padding: 1rem 1.5rem;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    background-color: white;
+  }
+
+  /* .nav-mobile {
+    display: none;
+  } */
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-mobile {
+    position: absolute;
+    left: -500px;
+    top: 4rem;
+    width: 100vw;
+    background-color: #ebebeb;
+    opacity: 0;
+    transform: translateX(-500px);
+    text-align: center;
+    transition: all 0.7s ease-in-out;
+    pointer-events: none; /* Impede cliques quando o menu está fechado */
+  }
+
+  .nav-mobile a {
+    font-size: 22px;
+    margin: 20px 0px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .nav-mobile a:visited {
+    color: black;
+  }
+
+  #check:checked ~ .nav-mobile {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    animation: slider-in 0.7s ease-in-out forwards;
+  }
+
+  #check:not(:checked) ~ .nav-mobile {
+    animation: slider-out 0.7s ease-in-out forwards;
+  }
+
+  @keyframes slider-in {
+    from {
+      left: -500px;
+    }
+    to {
+      left: 0;
+    }
+  }
+
+  @keyframes slider-out {
+    from {
+      left: 0;
+    }
+    to {
+      left: -500px;
+    }
+  }
+
+  .over-header {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    input {
+      display: none;
+    }
+
+    label {
+      display: none;
+    }
+
+    nav {
+      padding: 0rem 1.5rem;
+    }
+
+    .nav-mobile {
+      display: none;
+    }
+
+    .nav-desktop a {
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .nav-desktop {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: row;
+      gap: 10px;
+    }
+    .nav-desktop a:visited {
+      color: black;
+    }
+
+    .location,
+    .hours,
+    .header-email {
+      font-size: 14px;
+      border-left: 1px black solid;
+      /* margin: 0 5px; */
+      padding: 0 8px 0;
+    }
+    .over-header {
+      padding: 12px 19px;
+      border-bottom: 1px black solid;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .forEmergency {
+      padding: 0 8px;
+    }
+  }
+</style>
