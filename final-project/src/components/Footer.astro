@@ -7,7 +7,7 @@
             </p>
             <div class="btn">
                 <input type="text" placeholder="Enter your email" />
-                <button>Subscribe</button>
+                <button class="btn-subscribe">Subscribe</button>
             </div>
             <p class="btn-descript">
                 By subscribing you agree to with our <span id="privacy"
@@ -85,31 +85,33 @@
         </div>
     </section>
     <div class="responsive-subscribe">
-            <input
-                type="text"
-                class="subscribe-text"
-                placeholder="Enter your email"
-            />
-            <button>Subscribe</button>
-        </div>
-    </div>
-    <div class="responsive-media">
-        <img src="/img/Facebook.png" alt="" />
-        <img src="/img/Instagram.png" alt="" />
-        <img src="/img/Twitter.png" alt="" />
-        <img src="/img/LinkedIn.png" alt="" />
-    </div>
-
-    <hr />
-    <div class="copyright">
-        <p>2023 Ddsgnr. All right reserved.</p>
-        <ul>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-            <li>Cookies Settings</li>
-        </ul>
+        <input
+            type="text"
+            class="subscribe-text"
+            placeholder="Enter your email"
+        />
+        <button class='btn-subscribe'>Subscribe</button>
     </div>
 </footer>
+<div class="responsive-media">
+    <img src="/img/Facebook.png" alt="" />
+    <img src="/img/Instagram.png" alt="" />
+    <img src="/img/Twitter.png" alt="" />
+    <img src="/img/LinkedIn.png" alt="" />
+</div>
+<div class="overlay">
+    <div class="popup-window">Subscribed! Thank you 😊 </div>
+</div>
+
+<hr />
+<div class="copyright">
+    <p>2023 Ddsgnr. All right reserved.</p>
+    <ul>
+        <li>Privacy Policy</li>
+        <li>Terms of Service</li>
+        <li>Cookies Settings</li>
+    </ul>
+</div>
 
 <style>
     footer {
@@ -229,8 +231,25 @@
     .responsive-media {
         display: none;
     }
-    .contact, .responsive-subscribe{
+    .contact,
+    .responsive-subscribe {
         display: none;
+    }
+    .overlay {
+        display: none;
+        width: 30%;
+        height: 10%;
+        position: fixed;
+        top: 40%;
+        left: 31%;
+        background-color: rgba(232, 229, 229,1);
+        border-radius: 5px;
+        border: 1px solid grey;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* z-index: 999; */
     }
     @media (max-width: 700px) {
         section {
@@ -242,7 +261,7 @@
         .services {
             text-align: center;
         }
-   
+
         .btn,
         .btn-descript,
         .logo-descript {
@@ -276,25 +295,40 @@
         .contact {
             display: block;
         }
-        .responsive-subscribe{
+        .responsive-subscribe {
             display: flex;
             justify-content: center;
             align-items: center;
             padding-bottom: 1.5rem;
         }
-        .subscribe-text{
+        .subscribe-text {
             width: 60%;
         }
-        .responsive-subscribe button{
+        .responsive-subscribe button {
             width: 3.5rem;
             font-size: 9px;
         }
-
-        /* .about:hover .about-subitems {
-            display: block;
-        }
-        .services:hover .services-subitems {
-            display: block;
+        /* .overlay{
+            display: flex;
         } */
     }
 </style>
+<script>
+    const btn = document.querySelector(".btn-subscribe");
+    const overlay = document.querySelector(".overlay");
+    const popupWindow = document.querySelector(".popup-window");
+
+    btn.addEventListener("click", () => {
+        overlay.style.display = "flex";
+    });
+
+    overlay.addEventListener("click", (event) => {
+        if (!popupWindow.contains(event.target)) {
+            overlay.style.display = "none";
+        }
+    });
+
+    window.onload = () => {
+        overlay.style.display = "none";
+    };
+</script>
