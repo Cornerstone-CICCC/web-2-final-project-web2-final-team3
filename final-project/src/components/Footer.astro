@@ -17,7 +17,11 @@
         </div>
         <div class="side-items">
             <div class="about">
-                <h4>About Us</h4>
+                <h4>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >About Us</a
+                    >
+                </h4>
                 <div class="about-subitems">
                     <li>Home</li>
                     <li>About</li>
@@ -26,8 +30,19 @@
                     <li>Contact</li>
                 </div>
             </div>
+            <div class="contact">
+                <h4>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >Contact</a
+                    >
+                </h4>
+            </div>
             <div class="services">
-                <h4>Services</h4>
+                <h4>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >Services</a
+                    >
+                </h4>
                 <div class="services-subitems">
                     <li>Window</li>
                     <li>Residential</li>
@@ -67,16 +82,17 @@
                     </p>
                 </div>
             </div>
-            <div class="responsive-subscribe">
-                <h4>Subscribe</h4>
-                <div class="responsive-btn">
-                    <input type="text" class= 'subscribe-text' placeholder="Enter your email" />
-                    <button class="subscribe-btn">Subscribe</button>
-                </div>
-            </div>
-            
         </div>
     </section>
+    <div class="responsive-subscribe">
+            <input
+                type="text"
+                class="subscribe-text"
+                placeholder="Enter your email"
+            />
+            <button>Subscribe</button>
+        </div>
+    </div>
     <div class="responsive-media">
         <img src="/img/Facebook.png" alt="" />
         <img src="/img/Instagram.png" alt="" />
@@ -123,6 +139,14 @@
         flex: 2;
         justify-content: space-around;
     }
+    a,
+    a:visited {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover {
+        color: blue;
+    }
     li {
         list-style-type: none;
         padding: 10px 0;
@@ -142,7 +166,7 @@
         margin: 0;
         padding: 10px 0;
     }
-   
+
     hr {
         border: 1px solid grey;
     }
@@ -186,45 +210,39 @@
         color: black;
         box-shadow: 5px 5px 3px grey;
     }
-    .responsive-media{
+    .responsive-media {
         display: flex;
         justify-content: center;
     }
-    .responsive-subscribe{
-        border:2px solid black;
-        
-    }
-    .responsive-btn{
+    .responsive-btn {
         width: 100%;
         position: relative;
-        top:50%;
-        left:-50%
+        top: 50%;
+        left: -50%;
     }
-    .subscribe-btn{
+    .subscribe-btn {
         width: 30%;
     }
-    .subscribe-text{
+    .subscribe-text {
         width: 70%;
     }
-    .responsive-subscribe, .responsive-btn, .responsive-media{
+    .responsive-media {
+        display: none;
+    }
+    .contact, .responsive-subscribe{
         display: none;
     }
     @media (max-width: 700px) {
         section {
             flex-direction: column;
+            margin-bottom: 0;
         }
         .subscribe,
         .about,
         .services {
             text-align: center;
         }
-        input {
-            width: 50%;
-        }
-        button {
-            width: 10%;
-            font-size: 10px;
-        }
+   
         .btn,
         .btn-descript,
         .logo-descript {
@@ -239,14 +257,11 @@
             padding: 0;
             font-size: 12px;
         }
-        .responsive-subscribe{
-            display: block;
-        }
         .responsive-media {
             display: flex;
         }
-        .responsive-media{
-            gap:2rem;
+        .responsive-media {
+            gap: 2rem;
         }
         .follow {
             display: none;
@@ -258,14 +273,28 @@
         .services-subitems {
             display: none;
         }
-        .about:hover .about-subitems {
+        .contact {
+            display: block;
+        }
+        .responsive-subscribe{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 1.5rem;
+        }
+        .subscribe-text{
+            width: 60%;
+        }
+        .responsive-subscribe button{
+            width: 3.5rem;
+            font-size: 9px;
+        }
+
+        /* .about:hover .about-subitems {
             display: block;
         }
         .services:hover .services-subitems {
             display: block;
-        }
-        .responsive-subscribe:hover .responsive-btn {
-            display: flex;
-        }
+        } */
     }
 </style>
