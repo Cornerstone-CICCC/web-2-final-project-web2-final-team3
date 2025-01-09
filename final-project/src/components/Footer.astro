@@ -99,8 +99,8 @@
     <img src="/img/Twitter.png" alt="" />
     <img src="/img/LinkedIn.png" alt="" />
 </div>
-<div class="overlay">
-    <div class="popup-window">Subscribed! Thank you 😊 </div>
+<div id="overlay">
+    <!-- <div class="popup-window">Subscribed! Thank you 😊 </div> -->
 </div>
 
 <hr />
@@ -235,13 +235,12 @@
     .responsive-subscribe {
         display: none;
     }
-    .overlay {
-        display: none;
+    #overlay {
         width: 30%;
         height: 10%;
         position: fixed;
         top: 40%;
-        left: 31%;
+        left: 35%;
         background-color: rgba(232, 229, 229,1);
         border-radius: 5px;
         border: 1px solid grey;
@@ -250,6 +249,14 @@
         justify-content: center;
         align-items: center;
         /* z-index: 999; */
+        display: none;
+
+    }
+    .success {
+        color: green; /* message is right */
+    }
+    .error {
+        color: red; /* message is wrong */
     }
     @media (max-width: 700px) {
         section {
@@ -308,27 +315,33 @@
             width: 3.5rem;
             font-size: 9px;
         }
-        /* .overlay{
-            display: flex;
-        } */
-    }
+     }
 </style>
 <script>
     const btn = document.querySelector(".btn-subscribe");
-    const overlay = document.querySelector(".overlay");
-    const popupWindow = document.querySelector(".popup-window");
+    const overlay = document.querySelector("#overlay");
+    const input = document.querySelector("subscribe-text");
 
     btn.addEventListener("click", () => {
         overlay.style.display = "flex";
-    });
+        if(input.value.trim() === ""){
+            overlay.textContent = 'Please enter your email';
+            overlay.className = 'error'; // 設定紅色訊息
+        }
+        else{
+            overlay.textContent = 'Subscribed! Thank you 😊';
+            overlay.className = 'success'; 
 
-    overlay.addEventListener("click", (event) => {
-        if (!popupWindow.contains(event.target)) {
-            overlay.style.display = "none";
         }
     });
 
-    window.onload = () => {
-        overlay.style.display = "none";
-    };
+    // overlay.addEventListener("click", (event) => {
+    //     if (!popupWindow.contains(event.target)) {
+    //         overlay.style.display = "none";
+    //     }
+    // });
+
+    // window.onload = () => {
+    //     overlay.style.display = "none";
+    // };
 </script>
