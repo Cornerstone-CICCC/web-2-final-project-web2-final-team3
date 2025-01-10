@@ -1,149 +1,146 @@
 <section>
-    <div class="container">
-        <h1>Subscribe to our newsletter</h1>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            magni esse quod vitae quasi dolorem voluptatibus laboriosam ea,
-            consequuntur similique.
-        </p>
-        <div class="sign-up">
-            <div class="text">
-                <input type="text" class="signup-text" placeholder="Enter your email" />
-                <button class="btn-signup">Sign Up</button>
-            </div>
-            <p id="under-text">
-                By clicking Sign Up you're confirming that you agree with our
-                Terms and Conditions.
-            </p>
-        </div>
+  <div class="container">
+    <h1>Subscribe to our newsletter</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt magni
+      esse quod vitae quasi dolorem voluptatibus laboriosam ea, consequuntur
+      similique.
+    </p>
+    <div class="sign-up">
+      <div class="text">
+        <input type="text" class="signup-text" placeholder="Enter your email" />
+        <button class="btn-signup">Sign Up</button>
+      </div>
+      <p id="under-text">
+        By clicking Sign Up you're confirming that you agree with our Terms and
+        Conditions.
+      </p>
     </div>
+  </div>
 </section>
 <div id="message"></div>
 
 <style>
-    * {
-        padding: 0;
-        margin: 0;
-    }
-    section {
-        display: flex;
-        justify-content: center;
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+  }
+  .sign-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  p {
+    padding: 1rem;
+    text-align: center;
+  }
+  #under-text {
+    font-size: 12px;
+  }
+  input,
+  button {
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+  input {
+    width: 25rem;
+    height: 2rem;
+    caret-color: rgb(255, 0, 234);
+    font: 16px;
+  }
+  input::placeholder {
+    padding-left: 10px;
+  }
+  button {
+    width: 5rem;
+    height: 2rem;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    margin-left: 0.3rem;
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    background-color: #333;
+    color: white;
+  }
+  h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+  #message {
+    width: 30%;
+    height: 10%;
+    position: fixed;
+    top: 40%;
+    left: 35%;
+    background-color: rgba(232, 229, 229, 1);
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  .success {
+    color: green; /* message is right */
+  }
+  .error {
+    color: red; /* message is wrong */
+  }
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 32px;
     }
     .container {
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 5rem;
-    }
-    .sign-up {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 1.5rem;
-    }
-    p {
-        padding: 1rem;
-        text-align: center;
-    }
-    #under-text {
-        font-size: 12px;
-    }
-    input,
-    button {
-        border-radius: 5px;
-        border: 1px solid black;
+      width: 100%;
+      padding: 1rem;
     }
     input {
-        width: 25rem;
-        height: 2rem;
-        caret-color: rgb(255, 0, 234);
-        font: 16px;
-    }
-    input::placeholder {
-        padding-left: 10px;
+      width: 12rem;
     }
     button {
-        width: 5rem;
-        height: 2rem;
-        font-size: 12px;
-        background-color: black;
-        color: white;
-        margin-left: 0.3rem;
+      width: 3rem;
+      font-size: 9px;
     }
-    button:hover {
-        background-color: white;
-        color: black;
-        box-shadow: 5px 5px 3px grey;
+    #message {
+      width: 70%;
+      left: 10%;
     }
-    h1 {
-        font-size: 48px;
-        text-align: center;
-    }
-    #message{
-        width: 30%;
-        height: 10%;
-        position: fixed;
-        top: 40%;
-        left: 35%;
-        background-color: rgba(232, 229, 229,1);
-        border-radius: 5px;
-        border: 1px solid grey;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: none;
-    }
-    .success {
-        color: green; /* message is right */
-    }
-    .error {
-        color: red; /* message is wrong */
-    }
-    @media (max-width: 700px) {
-        h1 {
-            font-size: 32px;
-        }
-        .container{
-            width: 100%;
-            padding: 1rem;
-        }
-        input {
-            width: 12rem;
-        }
-        button {
-            width: 3rem;
-            font-size: 9px;
-        }
-        #message{
-            width: 70%;
-            left: 10%;
-        }
-    }
+  }
 </style>
 
 <script>
-    const button = document.querySelector(".btn-signup");
-    const message = document.getElementById("message");
-    const input = document.querySelector('.signup-text');
+  const button = document.querySelector(".btn-signup");
+  const message = document.getElementById("message");
+  const input = document.querySelector(".signup-text");
 
-    button.addEventListener("click", () => {
-        message.style.display = "flex";
-        if(input.value.trim() === ""){
-            message.textContent = 'Please enter your email.';
-            message.className = 'error'; 
-        }
-        else{
-            message.textContent = 'You are already sign up. Thank you 😊';
-            message.className = 'success'; 
-
-        }
-    });
-    message.addEventListener("click", (event) => {
-            message.style.display = "none";
-    });
-
+  button.addEventListener("click", () => {
+    message.style.display = "flex";
+    if (input.value.trim() === "") {
+      message.textContent = "Please enter your email.";
+      message.className = "error";
+    } else {
+      message.textContent = "You are already sign up. Thank you 😊";
+      message.className = "success";
+    }
+  });
+  message.addEventListener("click", (event) => {
+    message.style.display = "none";
+  });
 </script>

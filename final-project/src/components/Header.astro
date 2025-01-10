@@ -1,15 +1,27 @@
 <section class="over-header">
   <div class="header-info">
     <span class="forEmergency">For emergency cases: 567 123 45 67</span>
-    <span class="location">Location: 121 Wallstreet Street, NY , USA </span>
+    <a href="https://maps.app.goo.gl/88iH97cV7sCyMV686" target="_blank"
+      ><span class="location"
+        >Location: 121 Wallstreet Street, NY , USA
+      </span></a
+    >
     <span class="hours">Open hours: 9.00-24.00 Mon-Sat</span>
     <span class="header-email">Email:info@ddsgnr.com</span>
   </div>
   <div class="header-medias">
-    <img src="/Header Images/Facebook.svg" alt="" />
-    <img src="/Header Images/Instagram.svg" alt="" />
-    <img src="/Header Images/Twitter.svg" alt="" />
-    <img src="/Header Images/LinkedIn.svg" alt="" />
+    <a href="https://www.facebook.com/" target="_blank">
+      <img src="/Header Images/Facebook.svg" alt="" /></a
+    >
+    <a href="https://www.instagram.com/" target="_blank"
+      ><img src="/Header Images/Instagram.svg" alt="" /></a
+    >
+    <a href="https://www.twitter.com/" target="_blank"
+      ><img src="/Header Images/Twitter.svg" alt="" /></a
+    >
+    <a href="https://www.linkedin.com/" target="_blank"
+      ><img src="/Header Images/LinkedIn.svg" alt="" /></a
+    >
   </div>
 </section>
 
@@ -30,7 +42,9 @@
     <a href="services">Services</a>
     <a href="/#ourTeam">Teams</a>
     <a href="contact">Contact</a>
-    <button class="quote-request">Request a quote</button>
+    <a href="contact">
+      <button class="quote-request">Request a quote</button>
+    </a>
   </div>
   <div class="nav-desktop">
     <a href="/">Home</a>
@@ -38,7 +52,9 @@
     <a href="services">Services</a>
     <a href="/#ourTeam">Teams</a>
     <a href="contact">Contact</a>
-    <button class="quote-request">Request a quote</button>
+    <a href="contact">
+      <button class="quote-request">Request a quote</button>
+    </a>
   </div>
 </nav>
 
@@ -55,6 +71,8 @@
   .mobile-logo a {
     color: black;
     text-decoration: none;
+    display: flex;
+    align-items: center;
   }
 
   .mobile-logo {
@@ -80,7 +98,6 @@
 
   .quote-request:hover {
     background-color: #333;
-    transform: scale(1.2);
   }
 
   #check {
@@ -175,6 +192,15 @@
 
     nav {
       padding: 0rem 1.5rem;
+    }
+
+    .header-info a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .header-medias a {
+      width: 24px;
     }
 
     .nav-mobile {
