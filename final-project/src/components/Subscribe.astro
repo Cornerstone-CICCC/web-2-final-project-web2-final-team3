@@ -133,8 +133,8 @@
     button.addEventListener("click", () => {
         message.style.display = "flex";
         if(input.value.trim() === ""){
-            message.textContent = 'Please enter your email';
-            message.className = 'error'; // 設定紅色訊息
+            message.textContent = 'Please enter your email.';
+            message.className = 'error'; 
         }
         else{
             message.textContent = 'You are already sign up. Thank you 😊';
@@ -143,9 +143,7 @@
         }
     });
     message.addEventListener("click", (event) => {
-        // if (!popupWindow.contains(event.target)) {
             message.style.display = "none";
-        // }
     });
 
 </script>

@@ -6,7 +6,7 @@
                 Join our newsletter to stay up to date on features and releases.
             </p>
             <div class="btn">
-                <input type="text" placeholder="Enter your email" />
+                <input type="text" class='subscribe-text' placeholder="Enter your email" />
                 <button class="btn-subscribe">Subscribe</button>
             </div>
             <p class="btn-descript">
@@ -87,10 +87,10 @@
     <div class="responsive-subscribe">
         <input
             type="text"
-            class="subscribe-text"
+            class="res-subscribe-text"
             placeholder="Enter your email"
         />
-        <button class='btn-subscribe'>Subscribe</button>
+        <button class='res-btn-subscribe'>Subscribe</button>
     </div>
 </footer>
 <div class="responsive-media">
@@ -99,9 +99,7 @@
     <img src="/img/Twitter.png" alt="" />
     <img src="/img/LinkedIn.png" alt="" />
 </div>
-<div id="overlay">
-    <!-- <div class="popup-window">Subscribed! Thank you 😊 </div> -->
-</div>
+<div id="overlay"></div>
 
 <hr />
 <div class="copyright">
@@ -173,7 +171,7 @@
         border: 1px solid grey;
     }
     .copyright {
-        padding: 0.5rem 0;
+        padding: 0.5rem 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -215,24 +213,9 @@
     .responsive-media {
         display: flex;
         justify-content: center;
-    }
-    .responsive-btn {
-        width: 100%;
-        position: relative;
-        top: 50%;
-        left: -50%;
-    }
-    .subscribe-btn {
-        width: 30%;
-    }
-    .subscribe-text {
-        width: 70%;
-    }
-    .responsive-media {
         display: none;
     }
-    .contact,
-    .responsive-subscribe {
+    .contact, .responsive-subscribe{
         display: none;
     }
     #overlay {
@@ -252,12 +235,14 @@
         display: none;
 
     }
-    .success {
-        color: green; /* message is right */
-    }
-    .error {
-        color: red; /* message is wrong */
-    }
+    .successFooter {
+        color: green; 
+        text-align: center;
+    } 
+    .errorFooter { 
+        color: red;  
+        text-align: center;
+    } 
     @media (max-width: 700px) {
         section {
             flex-direction: column;
@@ -269,8 +254,7 @@
             text-align: center;
         }
 
-        .btn,
-        .btn-descript,
+        .btn,.btn-descript,
         .logo-descript {
             display: none;
         }
@@ -308,40 +292,55 @@
             align-items: center;
             padding-bottom: 1.5rem;
         }
-        .subscribe-text {
+        .res-subscribe-text {
             width: 60%;
         }
         .responsive-subscribe button {
             width: 3.5rem;
             font-size: 9px;
         }
+        #overlay{
+            width: 70%;
+            left: 10%;
+        }
      }
 </style>
 <script>
     const btn = document.querySelector(".btn-subscribe");
-    const overlay = document.querySelector("#overlay");
-    const input = document.querySelector("subscribe-text");
+    const responsiveBtn = document.querySelector(".res-btn-subscribe");
+    const input = document.querySelector(".subscribe-text");
+    const responsiveInput = document.querySelector(".res-subscribe-text");
+    const overlay = document.getElementById("overlay");
+
 
     btn.addEventListener("click", () => {
         overlay.style.display = "flex";
         if(input.value.trim() === ""){
-            overlay.textContent = 'Please enter your email';
-            overlay.className = 'error'; // 設定紅色訊息
+            overlay.textContent = 'Please enter your email.';
+            overlay.className = 'errorFooter'; 
         }
         else{
             overlay.textContent = 'Subscribed! Thank you 😊';
-            overlay.className = 'success'; 
+            overlay.className = 'successFooter'; 
 
         }
     });
 
-    // overlay.addEventListener("click", (event) => {
-    //     if (!popupWindow.contains(event.target)) {
-    //         overlay.style.display = "none";
-    //     }
-    // });
+    responsiveBtn.addEventListener("click", () => {
+        overlay.style.display = "flex";
+        if(responsiveInput.value.trim() === ""){
+            overlay.textContent = 'Please enter your email.';
+            overlay.className = 'errorFooter'; 
+        }
+        else{
+            overlay.textContent = 'Subscribed! Thank you 😊';
+            overlay.className = 'successFooter'; 
 
-    // window.onload = () => {
-    //     overlay.style.display = "none";
-    // };
+        }
+    });
+
+    overlay.addEventListener("click", () => {
+            overlay.style.display = "none";
+    });
+
 </script>
