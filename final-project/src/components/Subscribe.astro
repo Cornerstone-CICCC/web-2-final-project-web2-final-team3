@@ -8,8 +8,8 @@
         </p>
         <div class="sign-up">
             <div class="text">
-                <input type="text" placeholder="Enter your email" />
-                <button>Sign Up</button>
+                <input type="text" class="signup-text" placeholder="Enter your email" />
+                <button class="btn-signup">Sign Up</button>
             </div>
             <p id="under-text">
                 By clicking Sign Up you're confirming that you agree with our
@@ -82,13 +82,20 @@
         font-size: 48px;
         text-align: center;
     }
-    #message {
-        position: relative;
-        top: 0;
-        left: 0;
-        /* display: none; */
-        margin-top: 10px;
-        font-size: 16px;
+    #message{
+        width: 30%;
+        height: 10%;
+        position: fixed;
+        top: 40%;
+        left: 35%;
+        background-color: rgba(232, 229, 229,1);
+        border-radius: 5px;
+        border: 1px solid grey;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
     }
     .success {
         color: green; /* message is right */
@@ -111,24 +118,32 @@
             width: 3rem;
             font-size: 9px;
         }
+        #message{
+            width: 70%;
+            left: 10%;
+        }
     }
 </style>
 
-<!-- <script>
-    const button = document.querySelector("button");
+<script>
+    const button = document.querySelector(".btn-signup");
     const message = document.getElementById("message");
-    const input = document.querySelector('input');
+    const input = document.querySelector('.signup-text');
 
     button.addEventListener("click", () => {
-        alert('Please enter your email');
-        // if(input.value.trim() === ""){
-        //     message.textContent = 'Please enter your email';
-        //     message.className = 'error'; // 設定紅色訊息
-        // }
-        // else{
-        //     message.textContent = 'You are already sign up.';
-        //     message.className = 'success'; 
+        message.style.display = "flex";
+        if(input.value.trim() === ""){
+            message.textContent = 'Please enter your email.';
+            message.className = 'error'; 
+        }
+        else{
+            message.textContent = 'You are already sign up. Thank you 😊';
+            message.className = 'success'; 
 
-        // }
+        }
     });
-</script> -->
+    message.addEventListener("click", (event) => {
+            message.style.display = "none";
+    });
+
+</script>

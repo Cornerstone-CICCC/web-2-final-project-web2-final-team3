@@ -1,72 +1,96 @@
 <section>
     <div class="title">
         <h1 class="service">Our Services</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, laboriosam.</p>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi,
+            laboriosam.
+        </p>
     </div>
-    
+
     <div class="container">
         <div class="items">
-            <img src="/img/bedroom.png" alt="">
+            <img src="/img/bedroom.png" alt="" />
             <h3>One Bedroom Apartment</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, nostrum!</p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nesciunt, nostrum!
+            </p>
         </div>
         <div class="items">
-            <img src="/img/window.png" alt="">
+            <img src="/img/window.png" alt="" />
             <h3>Window Cleaning</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, nostrum!</p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nesciunt, nostrum!
+            </p>
         </div>
         <div class="items">
-            <img src="/img/residential.png" alt="">
+            <img src="/img/residential.png" alt="" />
             <h3>Residential Cleaning</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, nostrum!</p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nesciunt, nostrum!
+            </p>
         </div>
-        <div class="items">
-            <img src="/img/construction.png" alt="">
+        <div class="items responsive-img">
+            <img src="/img/construction.png" alt="" />
             <h3>Construction Cleaning</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, nostrum!</p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nesciunt, nostrum!
+            </p>
         </div>
-        <div class="items">
-            <img src="/img/commercial.png" alt="">
+        <div class="items responsive-img">
+            <img src="/img/commercial.png" alt="" />
             <h3>Commercial Cleaning</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, nostrum!</p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nesciunt, nostrum!
+            </p>
         </div>
-        <div class="items">
-            <img src="/img/two-bedroom.png" alt="">
+        <div class="items responsive-img">
+            <img src="/img/two-bedroom.png" alt="" />
             <h3>Two Bedroom Apartment</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, nostrum!</p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nesciunt, nostrum!
+            </p>
+        </div>
+        <div class="view-all">
+            <button class="btn-view-all">View all</button>
         </div>
     </div>
 </section>
 
 <style>
-    *{
+    * {
         padding: 0;
         margin: 0;
     }
-    section{
-        background-color: #F7F7F7;
+    section {
+        background-color: #f7f7f7;
         text-align: center;
     }
-    h1{
+    h1 {
         font-size: 48px;
     }
-    img{
-        width:100%;
+    img {
+        width: 100%;
     }
-    .title .service{
+    .title .service {
         padding: 5rem 0 1.5rem 0;
     }
-    .title p{
+    .title p {
         padding-bottom: 5rem;
     }
-    .container{
+    .container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 2rem;
         padding: 0 0.5rem 5rem 0.5rem;
     }
-    .items{
+    .items {
         width: 380px;
         display: flex;
         flex-direction: column;
@@ -75,21 +99,74 @@
         border: 0.5px solid #676767;
         border-radius: 5px;
     }
-    .items:hover{
+    .items:hover {
         box-shadow: 7px 7px 7px grey;
     }
-    h3{
+    h3 {
         padding-top: 2rem;
         padding-bottom: 1rem;
         font-size: 24px;
     }
-    p{
+    p {
         padding: 0 1.5rem 1.5rem 1.5rem;
     }
+    .view-all {
+        width: 380px;
+        display: none;
+    }
+    .btn-view-all {
+        width: 100%;
+        border-radius: 5px;
+        margin: 3rem 0;
+        padding: 1rem;
+        font-size: 16px;
+    }
+    .btn-view-all:hover {
+        background-color: black;
+        color: white;
+    }
 
-    @media(max-width:460px){
-        h1{
+    @media (max-width: 700px) {
+        h1 {
             font-size: 32px;
         }
+        /* .container {
+            padding-bottom: 0;
+        } */
+        .responsive-img {
+            display: none;
+        }
+        .view-all {
+            display: flex;
+        }
+        .btn-view-all {
+            margin-top: 1rem;
+        }
+        
     }
 </style>
+<script>
+    const viewAll = document.querySelector(".view-all");
+    const btnViewAll = document.querySelector(".btn-view-all");
+    const responsiveImg = document.querySelectorAll(".responsive-img");
+    const img = document.querySelector(".responsive-img");
+
+    btnViewAll.addEventListener("click", () => {
+        viewAll.style.display = "none";
+        responsiveImg.forEach((img) => {
+            img.style.display = "flex";
+        });
+
+        // if(img.style.display == 'none'){
+        //     console.log('img-none')
+        //     responsiveImg.forEach(img => {
+        //         img.style.display = 'flex';
+        // });
+        // }else{
+        //     console.log('img-flex')
+        //     responsiveImg.forEach(img => {
+        //         img.style.display = 'none';
+        // });
+        // }
+    });
+</script>
