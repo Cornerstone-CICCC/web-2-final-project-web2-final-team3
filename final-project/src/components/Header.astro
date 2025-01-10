@@ -15,8 +15,10 @@
 
 <nav>
   <div class="mobile-logo">
-    <img src="/Header Images/Frame 1.svg" alt="" />
-    <span>Ddsgnr</span>
+    <a href="/">
+      <img src="/Header Images/Frame 1.svg" alt="" />
+      <span>Ddsgnr</span>
+    </a>
   </div>
   <input type="checkbox" id="check" />
   <label for="check" class="checkbtn">
@@ -50,6 +52,11 @@
     margin-right: 15px;
   }
 
+  .mobile-logo a {
+    color: black;
+    text-decoration: none;
+  }
+
   .mobile-logo {
     display: flex;
     align-items: center;
@@ -66,6 +73,14 @@
     align-self: self-start;
     justify-self: end;
     margin: 20px 0px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+  }
+
+  .quote-request:hover {
+    background-color: #333;
+    transform: scale(1.2);
   }
 
   #check {
@@ -170,6 +185,12 @@
       font-size: 16px;
       text-decoration: none;
       color: black;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-desktop a:hover {
+      transform: scale(1.2);
     }
 
     .nav-desktop {
