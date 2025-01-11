@@ -6,19 +6,19 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
   </div>
-  <form>
+  <form id="request-form">
     <div class="form-grid">
       <div class="form-field">
         <label class="form-label">Full name</label>
-        <input type="text" class="form-input" required />
+        <input type="text" class="form-input form-fullname" required />
       </div>
       <div class="form-field">
         <label class="form-label">Phone number</label>
-        <input type="tel" class="form-input" required />
+        <input type="tel" class="form-input form-phone-number" required />
       </div>
       <div class="form-field">
         <label class="form-label">Select service</label>
-        <select class="form-select" required>
+        <select class="form-select form-cleaning-type" required>
           <option value="" disabled selected>Choose a service</option>
           <option value="cleaning">House Cleaning</option>
           <option value="carpet">Carpet Cleaning</option>
@@ -27,7 +27,7 @@
       </div>
       <div class="form-field">
         <label class="form-label">Select time</label>
-        <select class="form-select" required>
+        <select class="form-select form-time" required>
           <option value="" disabled selected>Choose a time</option>
           <option value="morning">Morning</option>
           <option value="afternoon">Afternoon</option>
@@ -37,14 +37,15 @@
     </div>
     <div class="form-field full-width">
       <label class="form-label">Message</label>
-      <textarea class="form-textarea" placeholder="Type your message..."
-      ></textarea>
+      <textarea
+        class="form-textarea form-message"
+        placeholder="Type your message..."></textarea>
     </div>
     <div class="form-checkbox">
       <input type="checkbox" id="terms" required />
       <label for="terms">I accept the <a href="#">Terms</a></label>
     </div>
-    <button type="submit" class="submit-button">Submit</button>
+    <button type="submit" class="submit-button request-button">Submit</button>
   </form>
 </div>
 
@@ -124,7 +125,7 @@
 
   .form-select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23333' stroke-width='2' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http:12 12'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.5rem;
@@ -176,3 +177,95 @@
     }
   }
 </style>
+
+<script>
+  (function initEmailJS() {
+    emailjs.init("S6A-BX8OL9RygQtML");
+  })();
+
+  document
+    .querySelector("#request-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const submitButton = this.querySelector(".request-button");
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      const formData = {
+        fullName: this.querySelector(".form-fullname").value,
+        phoneNumber: this.querySelector(".form-phone-number").value,
+        service: this.querySelector(".form-cleaning-type").value,
+        time: this.querySelector(".form-time").value,
+        message: this.querySelector(".form-message").value,
+      };
+
+      const templateParams = {
+        to_name: formData.fullName,
+        from_name: "Your Company Name",
+        message: `
+      Name: ${formData.fullName}
+      Phone: ${formData.phoneNumber}
+      Service: ${formData.service}
+      Time: ${formData.time}
+      Message: ${formData.message}
+    `,
+      };
+
+      emailjs
+        .send("service_k62ntjg", "template_mv0q0yq", templateParams)
+        .then(function () {
+          showMessage(
+            "Thank you! Your message has been sent successfully.",
+            "success"
+          );
+          resetForm();
+        })
+        .catch(function (error) {
+          showMessage("Failed to send message. Please try again.", "error");
+          console.error("EmailJS Error:", error);
+        })
+        .finally(function () {
+          submitButton.disabled = false;
+          submitButton.textContent = "Submit";
+        });
+    });
+
+  function showMessage(message, type) {
+    const existingMessage = document.querySelector(".message-alert");
+    if (existingMessage) {
+      existingMessage.remove();
+    }
+
+    const messageElement = document.createElement("div");
+    messageElement.className = `message-alert ${type}`;
+    messageElement.textContent = message;
+
+    messageElement.style.padding = "1rem";
+    messageElement.style.marginBottom = "1rem";
+    messageElement.style.borderRadius = "4px";
+    messageElement.style.textAlign = "center";
+
+    if (type === "success") {
+      messageElement.style.backgroundColor = "#dff0d8";
+      messageElement.style.color = "#3c763d";
+      messageElement.style.border = "1px solid #d6e9c6";
+    } else {
+      messageElement.style.backgroundColor = "#f2dede";
+      messageElement.style.color = "#a94442";
+      messageElement.style.border = "1px solid #ebccd1";
+    }
+
+    const formContainer = document.querySelector(".form-container");
+    formContainer.insertBefore(messageElement, formContainer.firstChild);
+
+    setTimeout(() => {
+      messageElement.remove();
+    }, 5000);
+  }
+
+  function resetForm() {
+    const form = document.querySelector("form");
+    form.reset();
+  }
+</script>
