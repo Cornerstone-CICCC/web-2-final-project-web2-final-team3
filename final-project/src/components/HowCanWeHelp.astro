@@ -7,7 +7,7 @@
       </span>
       <span class="help-span quote"> Request a quote </span>
     </div>
-    <button>Request a quote</button>
+    <a href="contact"><button>Request a quote</button></a>
   </div>
 </section>
 
@@ -46,18 +46,26 @@
     font-size: 40px;
   }
 
-  .box-help button {
+  .box-help a {
     grid-column: 2;
     grid-row: 1 / span 2;
+    align-self: center;
+    justify-self: end;
+    margin-right: 45px;
+  }
+
+  .box-help button {
     background-color: black;
     color: white;
     border-radius: 5px;
     width: 164px;
     height: 48px;
     border: 1px black solid;
-    align-self: center;
-    justify-self: end;
-    margin-right: 45px;
+    transition: all 0.3s ease;
+  }
+
+  .box-help button:hover {
+    background-color: #333;
   }
 
   @media (max-width: 720px) {
@@ -73,7 +81,7 @@
       font-size: 20px;
     }
 
-    .box-help button {
+    .box-help a {
       width: 41%;
       align-self: unset;
       margin: 30px 20px 20px;
