@@ -1,0 +1,266 @@
+<div>
+  <div class="perspective">
+    <div class="letter">
+      <div class="letter-content" style="visibility: hidden;">
+        <div class="half-wrapper">
+          <div class="half-inner">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              sagittis urna eget nisi tempor fermentum. Suspendisse est velit,
+              lobortis eget feugiat vel, lobortis sit amet urna. Donec at ipsum
+              ut erat iaculis pellentesque ut non massa. Ut rhoncus justo vel
+              ante efficitur dictum. Sed vitae arcu dictum, facilisis dolor ac,
+              bibendum massa. Duis ultricies lacus id quam sagittis malesuada.
+              Vivamus commodo lacus turpis. Integer eget est at est accumsan
+              tempor. Proin condimentum erat lectus, eget tincidunt mi convallis
+              sed. Cras elit mi, aliquam sed mattis eu, mattis iaculis nibh. Sed
+              congue odio at ullamcorper faucibus. Sed pulvinar est vel velit
+              commodo suscipit. Vivamus luctus felis eu est hendrerit, eget
+              aliquet velit dignissim.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="letter-half">
+        <div class="half-wrapper">
+          <div class="half-inner">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              sagittis urna eget nisi tempor fermentum. Suspendisse est velit,
+              lobortis eget feugiat vel, lobortis sit amet urna. Donec at ipsum
+              ut erat iaculis pellentesque ut non massa. Ut rhoncus justo vel
+              ante efficitur dictum. Sed vitae arcu dictum, facilisis dolor ac,
+              bibendum massa. Duis ultricies lacus id quam sagittis malesuada.
+              Vivamus commodo lacus turpis. Integer eget est at est accumsan
+              tempor. Proin condimentum erat lectus, eget tincidunt mi convallis
+              sed. Cras elit mi, aliquam sed mattis eu, mattis iaculis nibh. Sed
+              congue odio at ullamcorper faucibus. Sed pulvinar est vel velit
+              commodo suscipit. Vivamus luctus felis eu est hendrerit, eget
+              aliquet velit dignissim.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="letter-half bottom">
+        <div class="half-wrapper">
+          <div class="half-inner">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              sagittis urna eget nisi tempor fermentum. Suspendisse est velit,
+              lobortis eget feugiat vel, lobortis sit amet urna. Donec at ipsum
+              ut erat iaculis pellentesque ut non massa. Ut rhoncus justo vel
+              ante efficitur dictum. Sed vitae arcu dictum, facilisis dolor ac,
+              bibendum massa. Duis ultricies lacus id quam sagittis malesuada.
+              Vivamus commodo lacus turpis. Integer eget est at est accumsan
+              tempor. Proin condimentum erat lectus, eget tincidunt mi convallis
+              sed. Cras elit mi, aliquam sed mattis eu, mattis iaculis nibh. Sed
+              congue odio at ullamcorper faucibus. Sed pulvinar est vel velit
+              commodo suscipit. Vivamus luctus felis eu est hendrerit, eget
+              aliquet velit dignissim.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="letter-front">
+        <div class="letter-front-inner">
+          <div class="letter-front-content">
+            <div class="from-block">
+              California Secretary of State<br />
+              300 S Spring St #12th<br />
+              Los Angeles, CA 90013
+            </div>
+            <img class="stamp" src="/contactUs/stamp.svg" alt="Stamp" />
+            <div class="to-block">
+              <span class="to-name">Patrick Stewart</span><br />
+              40 3800 North<br />
+              Hyde Park, UT 84318
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="toggle-button">Fold the letter</button>
+</div>
+<style>
+  .perspective {
+    perspective: 1000px;
+    transition: transform 1000ms;
+  }
+
+  .perspective.is-folded {
+    transform: translateY(-25%);
+  }
+
+  .letter {
+    padding: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 600px;
+    position: relative;
+  }
+
+  .half-wrapper {
+    width: 100%;
+    background: repeating-linear-gradient(
+      -45deg,
+      #fff 0px,
+      #fff 20px,
+      #ffaaaa 20px,
+      #ffaaaa 40px,
+      #fff 40px,
+      #fff 60px,
+      #aaceff 60px,
+      #aaceff 80px
+    );
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0px 6px 12px -3px rgba(0, 0, 0, 0.3);
+    transition: filter 1000ms;
+  }
+
+  .half-inner {
+    background: #fff;
+    padding: 20px;
+    transition: background 1000ms;
+    border-radius: 4px;
+  }
+
+  .letter-half {
+    background: #fff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0% 0px 50% 0px);
+    padding: 20px;
+    padding-bottom: 0px;
+    transition: transform 1000ms;
+    z-index: 3;
+  }
+
+  .letter-half.bottom {
+    clip-path: inset(50% 0px -30px 0px);
+    z-index: 2;
+  }
+
+  .letter-half.is-folded {
+    transform: rotate3d(1, 0, 0, -180deg);
+  }
+
+  .letter-half.is-folded .half-wrapper {
+    filter: brightness(0.4);
+  }
+
+  .letter-front {
+    position: absolute;
+    left: 20px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #fff 0px,
+      #fff 20px,
+      #ffaaaa 20px,
+      #ffaaaa 40px,
+      #fff 40px,
+      #fff 60px,
+      #aaceff 60px,
+      #aaceff 80px
+    );
+    z-index: 9;
+    transition: transform 1000ms;
+    transform: rotate3d(1, 0, 0, 180deg);
+    backface-visibility: hidden;
+    clip-path: inset(50% 0px 0% 0px);
+  }
+
+  .letter-front.is-folded {
+    transform: rotate3d(1, 0, 0, 0deg);
+  }
+
+  .letter-front-inner {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  .letter-front-content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0px;
+    top: 50%;
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+  }
+
+  .letter-front-content::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    background: linear-gradient(
+      to bottom,
+      rgba(16, 26, 54, 0.05),
+      rgba(16, 26, 54, 0)
+    );
+    height: 40%;
+    width: 100%;
+    /* width: calc(100% + 20px); */
+  }
+
+  .from-block {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+
+  .to-block {
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .to-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .stamp {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 150px;
+  }
+
+  .toggle-button {
+    margin-top: 50px;
+  }
+</style>
+
+<script>
+  const perspective = document.querySelector(".perspective");
+  const letterHalf = document.querySelector(".letter-half");
+  const letterFront = document.querySelector(".letter-front");
+  const toggleButton = document.querySelector(".toggle-button");
+  let isFolded = false;
+
+  toggleButton.addEventListener("click", () => {
+    isFolded = !isFolded;
+    perspective.classList.toggle("is-folded");
+    letterHalf.classList.toggle("is-folded");
+    letterFront.classList.toggle("is-folded");
+    toggleButton.textContent = isFolded
+      ? "Unfold the letter"
+      : "Fold the letter";
+  });
+</script>
