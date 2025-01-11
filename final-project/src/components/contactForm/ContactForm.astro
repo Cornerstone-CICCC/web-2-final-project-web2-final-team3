@@ -180,7 +180,7 @@
 
 <script>
   (function initEmailJS() {
-    emailjs.init("S6A-BX8OL9RygQtML");
+    emailjs.init(import.meta.env.PUBLIC_API_KEY);
   })();
 
   document
@@ -213,7 +213,11 @@
       };
 
       emailjs
-        .send("service_k62ntjg", "template_mv0q0yq", templateParams)
+        .send(
+          import.meta.env.PUBLIC_SERVICE_ID,
+          import.meta.env.PUBLIC_TEMPLATE_ID,
+          templateParams
+        )
         .then(function () {
           showMessage(
             "Thank you! Your message has been sent successfully.",
